@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aswanabidin.englishconversation.HalamanTambahConversation">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Conversation"
+                    android:textColor="@color/putih"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/relayoutTambahJad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/appbarlayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgprofil"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@color/abutext" />
+
+            <Button
+                android:id="@+id/btnpilihgambar"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgprofil"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/stroke_rounded"
+                android:text="Pilih"
+                android:textAllCaps="false"
+                android:textColor="@color/biru"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/ettempatenglish"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/btnpilihgambar"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorGrayLight"
+                android:drawablePadding="10dp"
+                android:fontFamily="sans-serif"
+                android:hint="Location in Indonesian Language"
+                android:inputType="textCapWords"
+                android:paddingLeft="15dp"
+                android:text=""
+                android:textColor="@color/hitam"
+                android:textColorHint="@color/abutext"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/ettempatindonesia"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ettempatenglish"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorGrayLight"
+                android:drawablePadding="10dp"
+                android:fontFamily="sans-serif"
+                android:hint="Location in English Language"
+                android:inputType="textCapWords"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textColor="@color/hitam"
+                android:textColorHint="@color/abutext"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etpercakapan"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/ettempatindonesia"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorGrayLight"
+                android:drawablePadding="10dp"
+                android:gravity="top|left"
+                android:hint="Catatan"
+                android:inputType="textMultiLine|textCapSentences"
+                android:lines="5"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:scrollHorizontally="false"
+                android:text=""
+                android:textColor="@color/hitam"
+                android:textColorHint="@color/abutext"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/putih"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnSubmitOrtuTambahJadwal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_rounded_corners"
+            android:elevation="5dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="btnsubmitconversation"
+            android:text="Tambah Jadwal"
+            android:textAllCaps="false"
+            android:textColor="@color/putih"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

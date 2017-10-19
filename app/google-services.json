@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1095273014892",
+    "firebase_url": "https://english-conversation-b7872.firebaseio.com",
+    "project_id": "english-conversation-b7872",
+    "storage_bucket": "english-conversation-b7872.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095273014892:android:6148546bb8a7ad3d",
+        "android_client_info": {
+          "package_name": "com.example.aswanabidin.englishconversation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095273014892-1sdp49sbt0a36s39cohtslnnvkt00jmh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aswanabidin.englishconversation",
+            "certificate_hash": "4c40026bf89c50a476b14c8794862460a85c7b2c"
+          }
+        },
+        {
+          "client_id": "1095273014892-uk0s51v3i3g1b6452rf50961evp3n20m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh506sBdgnBw4sqjjuYJsT7sgI76ce7oc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095273014892-uk0s51v3i3g1b6452rf50961evp3n20m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

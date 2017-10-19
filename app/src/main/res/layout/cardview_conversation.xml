@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_conversation"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="0.5dp"
+    android:foreground="?selectableItemBackground"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/item_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/imgconversation"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@color/abutext" />
+
+        <TextView
+            android:id="@+id/tvnamaenglish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_toRightOf="@+id/imgconversation"
+            android:text="School Conversation"
+            android:textColor="@color/hitam"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/tvnamaindonesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvnamaenglish"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imgconversation"
+            android:text="Percakapan di Sekolah"
+            android:textColor="@color/abutext"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvpercakapan"
+            android:textColor="@color/putih"
+            android:textSize="8sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvnamaindonesia"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/imgconversation" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
