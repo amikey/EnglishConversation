@@ -119,7 +119,7 @@ public class HalamanTambahArtikel extends AppCompatActivity {
         btnsubmitarticle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"Hallo Snackbarr, selamat datang di aplikasi percakapak bahasa inggris. Selamt belajar.", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"Hallo Snackbarrr, selamat datang di aplikasi percakapak bahasa inggris. Selamt belajar.", Snackbar.LENGTH_LONG);
                 View view1 = snackbar.getView();
                 view1.setBackgroundColor(ContextCompat.getColor(HalamanTambahArtikel.this, R.color.biru));
                 snackbar.show();
