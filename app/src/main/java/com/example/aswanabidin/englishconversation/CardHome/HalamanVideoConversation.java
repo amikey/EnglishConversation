@@ -3,13 +3,29 @@ package com.example.aswanabidin.englishconversation.CardHome;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 
+import com.example.aswanabidin.englishconversation.Adapter.ConversationAdapter;
+import com.example.aswanabidin.englishconversation.Adapter.VideoAdapter;
 import com.example.aswanabidin.englishconversation.HalamanUtama;
+import com.example.aswanabidin.englishconversation.Model.ConversationModel;
+import com.example.aswanabidin.englishconversation.Model.VideoModel;
 import com.example.aswanabidin.englishconversation.R;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
 public class HalamanVideoConversation extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    Vector<VideoModel> videoModels = new Vector<VideoModel>();
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +36,27 @@ public class HalamanVideoConversation extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerlistvideo);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        progressBar = (ProgressBar) findViewById(R.id.progress_circle);
+
+        progressBar.setVisibility(View.VISIBLE); //progress bar mulai
+
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/EY0vwK7a2yg\" frameborder=\"0\" allowfullscreen></iframe>"));
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/XVQlnP5Yu2A\" frameborder=\"0\" allowfullscreen></iframe>"));
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/SKTQHHgC0_0\" frameborder=\"0\" allowfullscreen></iframe>"));
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/ns6-ZtCxrdM\" frameborder=\"0\" allowfullscreen></iframe>"));
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/oYGSV5ly2KY\" frameborder=\"0\" allowfullscreen></iframe>"));
+
+        progressBar.setVisibility(View.GONE); //progress bar berhenti ketika cardview muncul
+
+        VideoAdapter videoAdapter = new VideoAdapter(videoModels);
+        recyclerView.setAdapter(videoAdapter);
+
+
 
 
     }
@@ -36,5 +73,11 @@ public class HalamanVideoConversation extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, HalamanUtama.class);
+        startActivity(intent);
     }
 }

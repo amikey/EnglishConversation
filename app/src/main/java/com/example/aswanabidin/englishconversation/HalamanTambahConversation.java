@@ -102,7 +102,7 @@ public class HalamanTambahConversation extends AppCompatActivity implements View
         //progressbar
         progressBar = (ProgressBar) findViewById(R.id.progress_circle);
 
-        btnsubmitconversation = (Button) findViewById(R.id.btnTambahConversation);
+//        btnsubmitconversation = (Button) findViewById(R.id.btnTambahConversation);
         tempateng = (EditText) findViewById(R.id.ettempatenglish);
         tempatindo = (EditText) findViewById(R.id.ettempatindonesia);
         percakapan = (EditText) findViewById(R.id.etpercakapan);

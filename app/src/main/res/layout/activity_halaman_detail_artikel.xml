@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aswanabidin.englishconversation.CardHome.HalamanArticle">
+    tools:context="com.example.aswanabidin.englishconversation.HalamanDetailArtikel">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -27,34 +27,43 @@
                 android:gravity="left">
 
                 <TextView
-                    android:id="@+id/toolbarTitle"
+                    android:id="@+id/tvnamaartikel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Article"
+                    android:text="Detail Article"
                     android:textColor="@color/putih"
                     android:textSize="18sp" />
-
-                <ImageButton
-                    android:id="@+id/imgtambahartikel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/biru"
-                    android:src="@drawable/ic_create" />
 
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>
 
-
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/appbarlayout">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_margin="10dp">
 
-    </android.support.v7.widget.RecyclerView>
+        <TextView
+            android:id="@+id/tvtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Title Article"
+            android:textColor="@color/hitam"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tvdeskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvtitle"
+            android:layout_marginTop="10dp"
+            android:text="Ini deskripsi artikel"
+            android:textSize="12sp" />
+    </RelativeLayout>
 
 </RelativeLayout>

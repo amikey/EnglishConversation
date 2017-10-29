@@ -73,14 +73,14 @@ public class HalamanConversation extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progress_circle);
 
 
-        btntambahconversation = (Button) findViewById(R.id.btnTambahConversation);
-        btntambahconversation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HalamanConversation.this, HalamanTambahConversation.class);
-                startActivity(intent);
-            }
-        });
+//        btntambahconversation = (Button) findViewById(R.id.btnTambahConversation);
+//        btntambahconversation.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HalamanConversation.this, HalamanTambahConversation.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         //instansiasi firebase database

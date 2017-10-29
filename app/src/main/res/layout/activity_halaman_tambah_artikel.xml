@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aswanabidin.englishconversation.HalamanTambahArtikel">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Article"
+                    android:textColor="@color/putih"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_margin="30dp">
+
+        <EditText
+            android:id="@+id/ettitleartikel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/et_rounded_corners"
+            android:drawableLeft="@drawable/ic_title"
+            android:drawablePadding="15dp"
+            android:hint="Title"
+            android:inputType="textCapCharacters"
+            android:paddingLeft="20dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/ettitleartikel"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/et_rounded_corners"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_date"
+            android:drawablePadding="15dp"
+            android:focusable="false"
+            android:hint="Date"
+            android:paddingLeft="20dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/etdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/etdate"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/stroke_rounded_multiline"
+            android:capitalize="sentences"
+            android:drawableLeft="@drawable/ic_description"
+            android:fontFamily="sans-serif"
+            android:gravity="top|left"
+            android:hint="Description"
+            android:inputType="textMultiLine|textCapSentences"
+            android:lines="5"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:scrollHorizontally="false"
+            android:textColor="@color/hitam"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnsubmitartikel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/etdescription"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_rounded_corners"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/putih" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

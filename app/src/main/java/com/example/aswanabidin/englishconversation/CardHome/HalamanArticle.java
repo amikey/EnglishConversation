@@ -5,11 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
+import com.example.aswanabidin.englishconversation.HalamanTambahArtikel;
 import com.example.aswanabidin.englishconversation.HalamanUtama;
 import com.example.aswanabidin.englishconversation.R;
 
 public class HalamanArticle extends AppCompatActivity {
+
+    private ImageButton btntambahartikel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,15 @@ public class HalamanArticle extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        btntambahartikel = (ImageButton) findViewById(R.id.imgtambahartikel);
+        btntambahartikel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HalamanArticle.this, HalamanTambahArtikel.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -36,5 +50,11 @@ public class HalamanArticle extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, HalamanUtama.class);
+        startActivity(intent);
     }
 }

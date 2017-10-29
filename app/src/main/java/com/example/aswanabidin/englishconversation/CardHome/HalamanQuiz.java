@@ -37,4 +37,10 @@ public class HalamanQuiz extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(this, HalamanUtama.class);
+        startActivity(intent);
+    }
 }

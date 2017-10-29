@@ -64,11 +64,16 @@
         <activity
             android:name=".HalamanDetailConversation"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HalamanTambahConversation"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HalamanTambahArtikel"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HalamanDetailArtikel"></activity>
     </application>
 
 </manifest>
