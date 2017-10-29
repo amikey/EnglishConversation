@@ -9,20 +9,18 @@ import android.os.Parcelable;
 
 public class ArtikelModel implements Parcelable {
 
-    public String title, date, deskripsi, url;
+    public String title, date, deskripsi;
 
-    public ArtikelModel(String title, String date, String deskripsi, String url) {
+    public ArtikelModel(String title, String date, String deskripsi) {
         this.title = title;
         this.date = date;
         this.deskripsi = deskripsi;
-        this.url = url;
     }
 
     protected ArtikelModel(Parcel in) {
         title = in.readString();
         date = in.readString();
         deskripsi = in.readString();
-        url = in.readString();
     }
 
     public static final Creator<ArtikelModel> CREATOR = new Creator<ArtikelModel>() {
@@ -47,7 +45,6 @@ public class ArtikelModel implements Parcelable {
         parcel.writeString(title);
         parcel.writeString(date);
         parcel.writeString(deskripsi);
-        parcel.writeString(url);
     }
 
     public String getTitle() {
@@ -72,13 +69,5 @@ public class ArtikelModel implements Parcelable {
 
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }

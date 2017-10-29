@@ -3,25 +3,22 @@ package com.example.aswanabidin.englishconversation;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.example.aswanabidin.englishconversation.Adapter.ConversationAdapter;
 import com.example.aswanabidin.englishconversation.Adapter.VideoAdapter;
 import com.example.aswanabidin.englishconversation.CardHome.HalamanArticle;
-import com.example.aswanabidin.englishconversation.Model.ConversationModel;
+import com.example.aswanabidin.englishconversation.Model.ArtikelModel;
 import com.example.aswanabidin.englishconversation.Model.VideoModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -29,19 +26,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 import static com.example.aswanabidin.englishconversation.R.id.btnsubmitartikel;
-import static com.example.aswanabidin.englishconversation.R.id.normal;
 
 public class HalamanTambahArtikel extends AppCompatActivity {
 
     private EditText title, date, deskripsi;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase, artikel;
     private StorageReference mStorageRef;
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth mAuth;
@@ -82,6 +77,7 @@ public class HalamanTambahArtikel extends AppCompatActivity {
         title = (EditText) findViewById(R.id.ettitleartikel);
         date = (EditText) findViewById(R.id.etdate);
         deskripsi = (EditText) findViewById(R.id.etdescription);
+//        artikel = mDatabase.child("artikel");
 
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,13 +112,37 @@ public class HalamanTambahArtikel extends AppCompatActivity {
             }
         });
 
+        progressDialog.setMessage("Unggah...");
+
         btnsubmitarticle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"Hallo Snackbarrr, selamat datang di aplikasi percakapak bahasa inggris. Selamt belajar.", Snackbar.LENGTH_LONG);
-                View view1 = snackbar.getView();
-                view1.setBackgroundColor(ContextCompat.getColor(HalamanTambahArtikel.this, R.color.biru));
-                snackbar.show();
+
+                String mtitle = title.getText().toString().trim();
+                String mdate = date.getText().toString().trim();
+                String mdeskripsi = deskripsi.getText().toString().trim();
+
+                if (TextUtils.isEmpty(mtitle)) {
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Silahkan isi judul artikel", Snackbar.LENGTH_LONG);
+                    View vtitle = snackbar.getView();
+                    vtitle.setBackgroundColor(ContextCompat.getColor(HalamanTambahArtikel.this, R.color.biru));
+                    snackbar.show();
+                }
+
+
+                progressDialog.show();
+
+                ArtikelModel artikelModel = new ArtikelModel(title.getText().toString(), date.getText().toString(), deskripsi.getText().toString());
+
+                String upload = mDatabase.child("artikel").push().getKey();
+                mDatabase.child(upload).setValue(artikelModel);
+
+//                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),"Artikel telah selesai diunggah!", Snackbar.LENGTH_LONG);
+//                View view1 = snackbar.getView();
+//                view1.setBackgroundColor(ContextCompat.getColor(HalamanTambahArtikel.this, R.color.biru));
+//                snackbar.show();
+
+                progressDialog.dismiss();
 
             }
         });
