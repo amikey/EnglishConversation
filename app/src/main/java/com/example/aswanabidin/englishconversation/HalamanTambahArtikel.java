@@ -112,25 +112,35 @@ public class HalamanTambahArtikel extends AppCompatActivity {
             }
         });
 
-        progressDialog.setMessage("Unggah...");
 
         btnsubmitarticle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                progressDialog.setMessage("Unggah...");
+                progressDialog.show();
                 String mtitle = title.getText().toString().trim();
                 String mdate = date.getText().toString().trim();
                 String mdeskripsi = deskripsi.getText().toString().trim();
 
                 if (TextUtils.isEmpty(mtitle)) {
-                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Silahkan isi judul artikel", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Title Empty", Snackbar.LENGTH_LONG);
                     View vtitle = snackbar.getView();
                     vtitle.setBackgroundColor(ContextCompat.getColor(HalamanTambahArtikel.this, R.color.biru));
                     snackbar.show();
                 }
 
-
-                progressDialog.show();
+                if (TextUtils.isEmpty(mdate)) {
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Date Empty", Snackbar.LENGTH_LONG);
+                    View vtitle = snackbar.getView();
+                    vtitle.setBackgroundColor(ContextCompat.getColor(HalamanTambahArtikel.this, R.color.biru));
+                    snackbar.show();
+                }
+                if (TextUtils.isEmpty(mdeskripsi)) {
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Description Empty", Snackbar.LENGTH_LONG);
+                    View vtitle = snackbar.getView();
+                    vtitle.setBackgroundColor(ContextCompat.getColor(HalamanTambahArtikel.this, R.color.biru));
+                    snackbar.show();
+                }
 
                 ArtikelModel artikelModel = new ArtikelModel(title.getText().toString(), date.getText().toString(), deskripsi.getText().toString());
 
@@ -144,8 +154,11 @@ public class HalamanTambahArtikel extends AppCompatActivity {
 
                 progressDialog.dismiss();
 
+
+
             }
         });
+
     }
 
 

@@ -18,8 +18,6 @@ import com.example.aswanabidin.englishconversation.R;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 /**

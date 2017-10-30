@@ -73,7 +73,10 @@
             android:name=".HalamanTambahArtikel"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HalamanDetailArtikel"></activity>
+        <activity
+            android:name=".HalamanDetailArtikel"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -12,12 +12,9 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.aswanabidin.englishconversation.HalamanDetailArtikel;
-import com.example.aswanabidin.englishconversation.HalamanDetailConversation;
 import com.example.aswanabidin.englishconversation.Model.ArtikelModel;
-import com.example.aswanabidin.englishconversation.Model.ConversationModel;
 import com.example.aswanabidin.englishconversation.R;
 import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -32,6 +29,7 @@ public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.MyViewHo
     private ArrayList<ArtikelModel> artikelModels = new ArrayList<>();
     private Activity activity;
     private Context context;
+
 
     public ArtikelAdapter(ArrayList<ArtikelModel> artikelModels){
         this.artikelModels = artikelModels;
@@ -65,6 +63,7 @@ public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.MyViewHo
     }
 
 
+
     @Override
     public int getItemCount() {
         return (artikelModels == null) ? 0 : artikelModels.size();
@@ -87,5 +86,11 @@ public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.MyViewHo
             itemCard = (View) itemView.findViewById(R.id.item_card_artikel);
         }
     }
+
+    public void addData(ArtikelModel im) {
+        artikelModels.add(im);
+        notifyDataSetChanged();
+    }
+
 
 }

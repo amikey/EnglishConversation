@@ -55,7 +55,7 @@
             android:drawableLeft="@drawable/ic_title"
             android:drawablePadding="15dp"
             android:hint="Title"
-            android:inputType="textCapCharacters"
+            android:inputType="textCapSentences"
             android:paddingLeft="20dp"
             android:textSize="14sp" />
 

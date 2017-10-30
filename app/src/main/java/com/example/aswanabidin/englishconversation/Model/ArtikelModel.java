@@ -9,7 +9,13 @@ import android.os.Parcelable;
 
 public class ArtikelModel implements Parcelable {
 
-    public String title, date, deskripsi;
+    public String title;
+    public String date;
+    public String deskripsi;
+
+    public ArtikelModel(){
+
+    }
 
     public ArtikelModel(String title, String date, String deskripsi) {
         this.title = title;
@@ -17,7 +23,7 @@ public class ArtikelModel implements Parcelable {
         this.deskripsi = deskripsi;
     }
 
-    protected ArtikelModel(Parcel in) {
+    public ArtikelModel(Parcel in) {
         title = in.readString();
         date = in.readString();
         deskripsi = in.readString();
@@ -69,5 +75,9 @@ public class ArtikelModel implements Parcelable {
 
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
+    }
+
+    public static Creator<ArtikelModel> getCREATOR() {
+        return CREATOR;
     }
 }
