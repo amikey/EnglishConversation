@@ -86,9 +86,11 @@ public class HalamanArticle extends AppCompatActivity {
                     String title = value.getTitle();
                     String date = value.getDate();
                     String deskripsi = value.getDeskripsi();
-                    value.setTitle(title);
-                    value.setDate(date);
-                    value.setDeskripsi(deskripsi);
+                    String url = value.getUrl();
+                    artikel.setTitle(title);
+                    artikel.setDate(date);
+                    artikel.setDeskripsi(deskripsi);
+                    artikel.setUrl(url);
                     mAdapter.addData(artikel);
                 }
                 progressBar.setVisibility(View.GONE);
@@ -111,6 +113,7 @@ public class HalamanArticle extends AppCompatActivity {
             Intent intent = new Intent(this, HalamanUtama.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            onBackPressed();
             finish();
             return true;
         }
@@ -119,7 +122,10 @@ public class HalamanArticle extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(this, HalamanUtama.class);
+        super.onBackPressed();
+        Intent intent = new Intent(getBaseContext(), HalamanUtama.class);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         startActivity(intent);
+        finish();
     }
 }

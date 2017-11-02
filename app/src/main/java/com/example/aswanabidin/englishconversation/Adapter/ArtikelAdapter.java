@@ -9,12 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.aswanabidin.englishconversation.HalamanDetailArtikel;
 import com.example.aswanabidin.englishconversation.Model.ArtikelModel;
 import com.example.aswanabidin.englishconversation.R;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -51,6 +53,7 @@ public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.MyViewHo
         holder.title.setText(artikelModel.getTitle());
         holder.date.setText(artikelModel.getDate());
         holder.deskripsi.setText(artikelModel.getDeskripsi());
+        Picasso.with(context).load(artikelModel.getUrl()).fit().centerCrop().into(holder.imageView);
         holder.itemCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +77,7 @@ public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.MyViewHo
         private TextView title, date, deskripsi;
         private CardView cardView;
         private View itemCard;
+        private ImageView imageView;
         ArrayList<ArtikelModel> artikelModels = new ArrayList<>();
 
 
@@ -83,6 +87,7 @@ public class ArtikelAdapter extends RecyclerView.Adapter<ArtikelAdapter.MyViewHo
             title = (TextView) itemView.findViewById(R.id.tvtitlearticle);
             date = (TextView) itemView.findViewById(R.id.tvdate);
             deskripsi = (TextView) itemView.findViewById(R.id.tvdeskripsi);
+            imageView = (ImageView) itemView.findViewById(R.id.imgartikel);
             itemCard = (View) itemView.findViewById(R.id.item_card_artikel);
         }
     }

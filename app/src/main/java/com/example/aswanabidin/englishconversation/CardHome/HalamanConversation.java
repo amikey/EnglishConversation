@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.aswanabidin.englishconversation.Adapter.ConversationAdapter;
+import com.example.aswanabidin.englishconversation.HalamanTambahConversation;
 import com.example.aswanabidin.englishconversation.HalamanUtama;
 import com.example.aswanabidin.englishconversation.Model.ConversationModel;
 import com.example.aswanabidin.englishconversation.R;
@@ -68,14 +69,14 @@ public class HalamanConversation extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progress_circle);
 
 
-//        btntambahconversation = (Button) findViewById(R.id.btnTambahConversation);
-//        btntambahconversation.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(HalamanConversation.this, HalamanTambahConversation.class);
-//                startActivity(intent);
-//            }
-//        });
+        btntambahconversation = (Button) findViewById(R.id.btntambahconversation);
+        btntambahconversation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HalamanConversation.this, HalamanTambahConversation.class);
+                startActivity(intent);
+            }
+        });
 
 
         //instansiasi firebase database
@@ -125,6 +126,7 @@ public class HalamanConversation extends AppCompatActivity {
             Intent intent = new Intent(this, HalamanUtama.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            onBackPressed();
             finish();
             return true;
         }
@@ -133,8 +135,11 @@ public class HalamanConversation extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-       Intent intent = new Intent(this, HalamanUtama.class);
+        super.onBackPressed();
+       Intent intent = new Intent(getBaseContext(), HalamanUtama.class);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         startActivity(intent);
+        finish();
     }
 
 

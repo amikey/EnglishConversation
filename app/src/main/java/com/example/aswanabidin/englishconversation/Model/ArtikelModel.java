@@ -12,21 +12,37 @@ public class ArtikelModel implements Parcelable {
     public String title;
     public String date;
     public String deskripsi;
+    public String url;
 
     public ArtikelModel(){
 
     }
 
-    public ArtikelModel(String title, String date, String deskripsi) {
+    public ArtikelModel(String title, String date, String deskripsi, String url) {
         this.title = title;
         this.date = date;
         this.deskripsi = deskripsi;
+        this.url = url;
     }
 
-    public ArtikelModel(Parcel in) {
+    protected ArtikelModel(Parcel in) {
         title = in.readString();
         date = in.readString();
         deskripsi = in.readString();
+        url = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(date);
+        dest.writeString(deskripsi);
+        dest.writeString(url);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<ArtikelModel> CREATOR = new Creator<ArtikelModel>() {
@@ -40,18 +56,6 @@ public class ArtikelModel implements Parcelable {
             return new ArtikelModel[size];
         }
     };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(title);
-        parcel.writeString(date);
-        parcel.writeString(deskripsi);
-    }
 
     public String getTitle() {
         return title;
@@ -75,6 +79,14 @@ public class ArtikelModel implements Parcelable {
 
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public static Creator<ArtikelModel> getCREATOR() {

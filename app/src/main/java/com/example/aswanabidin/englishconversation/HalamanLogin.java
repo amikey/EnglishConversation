@@ -19,7 +19,7 @@ public class HalamanLogin extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_halaman_login);
 
-        btnregister = (Button) findViewById(R.id.btnregister);
+        btnregister = (Button) findViewById(R.id.register);
         btnregister.setOnClickListener(this);
 
         lupapass = (TextView) findViewById(R.id.etlupapassword);
@@ -39,7 +39,7 @@ public class HalamanLogin extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, HalamanLupaPassword.class));
                 break;
 
-            case R.id.btnregister:
+            case R.id.register:
                 startActivity(new Intent(this, HalamanDaftar.class));
                 break;
 

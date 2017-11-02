@@ -69,6 +69,7 @@ public class HalamanVideoConversation extends AppCompatActivity {
             Intent intent = new Intent(this, HalamanUtama.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            onBackPressed();
             finish();
             return true;
         }
@@ -77,7 +78,10 @@ public class HalamanVideoConversation extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        super.onBackPressed();
         Intent intent = new Intent(this, HalamanUtama.class);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         startActivity(intent);
+        finish();
     }
 }

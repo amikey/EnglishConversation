@@ -27,7 +27,7 @@
                 android:gravity="left">
 
                 <TextView
-                    android:id="@+id/tvnamaartikel"
+                    android:id="@+id/tvtitlearticle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Detail Article"
@@ -40,30 +40,63 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/imgartikel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_below="@+id/appbarlayout"
-        android:layout_margin="10dp">
+        android:background="@color/abutext"
+        android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/tvtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:text="Title Article"
-            android:textColor="@color/hitam"
-            android:textSize="18sp" />
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/appbarlayout"-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:text="Judul"-->
+    <!--android:textColor="@color/biru"-->
+    <!--android:textSize="18sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <TextView
+        android:id="@+id/tvemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgartikel"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Email pengguna"
+        android:textColor="@color/biru"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tvdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/imgartikel"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Tanggal"
+        android:textColor="@color/biru"
+        android:textSize="13sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imgartikel">
 
         <TextView
             android:id="@+id/tvdeskripsi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvtitle"
-            android:layout_marginTop="10dp"
-            android:text="Ini deskripsi artikel"
-            android:textSize="12sp" />
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:text="Deskripsi" />
+
+    </ScrollView>
+
 
 </RelativeLayout>

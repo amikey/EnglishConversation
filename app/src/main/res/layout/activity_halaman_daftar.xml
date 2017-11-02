@@ -58,7 +58,7 @@
             android:drawablePadding="15dp"
             android:fontFamily="sans-serif"
             android:hint="Your Name"
-            android:inputType="textCapCharacters"
+            android:inputType="textCapSentences"
             android:paddingLeft="20dp"
             android:textSize="14sp" />
 

@@ -39,7 +39,7 @@ public class HalamanUtama extends AppCompatActivity {
         conversation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HalamanUtama.this, HalamanConversation.class);
+                Intent intent = new Intent(getBaseContext(), HalamanConversation.class);
                 startActivity(intent);
                 finish();
             }
@@ -49,7 +49,7 @@ public class HalamanUtama extends AppCompatActivity {
         quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HalamanUtama.this, HalamanQuiz.class);
+                Intent intent = new Intent(getBaseContext(), HalamanQuiz.class);
                 startActivity(intent);
                 finish();
             }

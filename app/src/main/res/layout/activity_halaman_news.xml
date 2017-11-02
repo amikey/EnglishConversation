@@ -41,4 +41,10 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <WebView
+        android:id="@+id/viewnews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbarlayout"></WebView>
+
 </RelativeLayout>
