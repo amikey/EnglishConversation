@@ -1,15 +1,22 @@
 package com.example.aswanabidin.englishconversation.CardHome;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.aswanabidin.englishconversation.HalamanUtama;
+import com.example.aswanabidin.englishconversation.Quiz.HalamanQuizEasy;
 import com.example.aswanabidin.englishconversation.R;
 
 public class HalamanQuiz extends AppCompatActivity {
+
+    private Button easy, medium, hard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,24 @@ public class HalamanQuiz extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        easy = (Button) findViewById(R.id.btneasy);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Cabin-Regular.otf");
+        easy.setTypeface(typeface);
+        easy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HalamanQuiz.this, HalamanQuizEasy.class);
+                startActivity(intent);
+            }
+        });
+
+        medium = (Button) findViewById(R.id.btnmedium);
+        Typeface typeface1 = Typeface.createFromAsset(getAssets(), "fonts/Cabin-Regular.otf");
+        easy.setTypeface(typeface1);
+
+        hard = (Button) findViewById(R.id.btnhard);
+        Typeface typeface2 = Typeface.createFromAsset(getAssets(), "fonts/Cabin-Regular.otf");
+        easy.setTypeface(typeface2);
 
     }
 

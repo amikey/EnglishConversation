@@ -1,6 +1,9 @@
 package com.example.aswanabidin.englishconversation.CardHome;
 
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
@@ -11,13 +14,26 @@ import android.transition.Fade;
 import android.transition.Slide;
 import android.transition.Visibility;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.aswanabidin.englishconversation.HalamanLogin;
 import com.example.aswanabidin.englishconversation.HalamanUtama;
 import com.example.aswanabidin.englishconversation.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HalamanAccount extends AppCompatActivity {
+
+    private Button btnlogout;
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
+    private TextView namalengkap, email, username, password;
+    private DatabaseReference myRef;
+    private FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +45,36 @@ public class HalamanAccount extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        namalengkap = (TextView) findViewById(R.id.tvnamalengkap);
+        username = (TextView) findViewById(R.id.tvusername);
+        email = (TextView) findViewById(R.id.tvemailuser);
+        password = (TextView) findViewById(R.id.tvpassword);
+
+        btnlogout = (Button) findViewById(R.id.btnlogout);
+        btnlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(HalamanAccount.this);
+                builder.setTitle("Logout")
+                        .setMessage("Are you sure logout?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                FirebaseAuth.getInstance().signOut();
+                                startActivity(new Intent(getBaseContext(), HalamanLogin.class));
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
 
 
 

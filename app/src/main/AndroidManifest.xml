@@ -76,7 +76,12 @@
         <activity
             android:name=".HalamanDetailArtikel"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Quiz.HalamanQuizEasy"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Quiz.HalamanHighestScore"></activity>
     </application>
 
 </manifest>

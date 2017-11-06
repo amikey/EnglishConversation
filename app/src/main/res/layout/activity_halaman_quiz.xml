@@ -41,4 +41,109 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/relayouteasy"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="186dp"-->
+    <!--android:layout_below="@+id/appbarlayout"-->
+    <!--android:background="@color/hijau">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/tveasy"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/hijau"-->
+    <!--android:foreground="?attr/selectableItemBackground"-->
+    <!--android:text="EASY"-->
+    <!--android:textColor="@color/putih"-->
+    <!--android:textSize="35sp" />-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/relayoutmedium"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="186dp"-->
+    <!--android:layout_below="@+id/relayouteasy"-->
+    <!--android:background="@color/putih">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/tvmedium"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/kuning"-->
+    <!--android:foreground="?attr/selectableItemBackground"-->
+    <!--android:text="MEDIUM"-->
+    <!--android:textColor="@color/putih"-->
+    <!--android:textSize="35sp" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/relayouthard"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="189dp"-->
+    <!--android:layout_below="@+id/relayoutmedium"-->
+    <!--android:background="@color/merah">-->
+
+    <!--<Button-->
+    <!--android:id="@+id/tvhard"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="185dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:background="@color/merah"-->
+    <!--android:foreground="?attr/selectableItemBackground"-->
+    <!--android:text="HARD"-->
+    <!--android:textColorHighlight="@color/merah"-->
+    <!--android:textColor="@color/putih"-->
+    <!--android:textSize="35sp" />-->
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <Button
+            android:id="@+id/btneasy"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/stroke_rounded"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Easy"
+            android:textAllCaps="false"
+            android:textColor="@color/hijau"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/btnmedium"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btneasy"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/stroke_rounded"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Medium"
+            android:textAllCaps="false"
+            android:textColor="@color/kuning"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/btnhard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btnmedium"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/stroke_rounded"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Hard"
+            android:textAllCaps="false"
+            android:textColor="@color/merah"
+            android:textSize="30dp" />
+
+    </RelativeLayout>
+
+
 </RelativeLayout>

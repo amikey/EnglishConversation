@@ -41,4 +41,68 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <TextView
+        android:id="@+id/tvemailuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:text="Email"
+        android:textColor="@color/hitam"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvnamalengkap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvemailuser"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Your Name"
+        android:textColor="@color/hitam"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvnamalengkap"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="username"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvusername"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="password"
+        android:textSize="14sp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/putih">
+
+        <Button
+            android:id="@+id/btnlogout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_rounded_corners"
+            android:text="Log out"
+            android:textAllCaps="false"
+            android:textColor="@color/putih" />
+
+    </RelativeLayout>
+
 </RelativeLayout>
