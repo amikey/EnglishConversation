@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aswanabidin.englishconversation.Quiz.HalamanQuizEasy">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level Easy"
+                    android:textColor="@color/putih"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbarlayout">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:textColor="@color/biru"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvscore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/score"
+                android:text="100"
+                android:textColor="@color/biru"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/header">
+
+            <TextView
+                android:id="@+id/pertanyaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvscore"
+                android:text="Question"
+                android:textColor="@color/biru"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvbanyakpertanyaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/pertanyaan"
+                android:text="2/10"
+                android:textColor="@color/biru"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/relpertanyaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tvpertanyaan"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:text="Question"
+                android:textColor="@color/hitam"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relpilihan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relpertanyaan"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="35dp">
+
+            <Button
+                android:id="@+id/chooseA"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/btn_rounded_corners"
+                android:onClick="onClick"
+                android:text="Choose A"
+                android:textAllCaps="false"
+                android:textColor="@color/putih" />
+
+            <Button
+                android:id="@+id/chooseB"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/chooseA"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_rounded_corners"
+                android:onClick="onClick"
+                android:text="Choose B"
+                android:textAllCaps="false"
+                android:textColor="@color/putih" />
+
+            <Button
+                android:id="@+id/chooseC"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/chooseB"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_rounded_corners"
+                android:onClick="onClick"
+                android:text="Choose C"
+                android:textAllCaps="false"
+                android:textColor="@color/putih" />
+
+            <Button
+                android:id="@+id/chooseD"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/chooseC"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_rounded_corners"
+                android:onClick="onClick"
+                android:text="Choose D"
+                android:textAllCaps="false"
+                android:textColor="@color/putih" />
+
+            <Button
+                android:id="@+id/chooseE"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/chooseD"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_rounded_corners"
+                android:onClick="onClick"
+                android:text="Choose E"
+                android:textAllCaps="false"
+                android:textColor="@color/putih" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
