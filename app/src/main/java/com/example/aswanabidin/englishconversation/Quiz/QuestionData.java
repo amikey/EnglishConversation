@@ -8,22 +8,39 @@ public class QuestionData {
 
     // array untuk pertanyaan
     private String pertanyaan [] = {
-            "1. Siapa nama anda?",
-            "2. Dimana anda tinggal?",
-            "3. Berapa umur nada sekarang?",
-            "4. Dimana anda bersekolah?"
+            "Faiz and Rizqi is in the cinema to watch a movie. Suddenly they meets Aji, friend of Faiz" +
+                    "outside of the cinema. \nFaiz : Hello Aji, Good Afternoon. \nAji : Good Afternoon, Faiz ............",
+            "Faiz : I'm fine thank you and how about you? \nAji : ............",
+            "Faiz : Oh, this is my friend, Rizki. \nAji : Hello Rizki, my name is Aji. ............",
+            "Rizki : Hi, my name is Rizki. Nice to meet you too. \nFaiz : Well Aji, I think we have to go now," +
+                    "the movie is started to play. \nAji : Oh okay. ............ \nFaiz : See you.",
+            "Ciko : ............, where are you going? \nVita : Good afternoon, I'll have lunch at the canteen." +
+                    "\nCiko : Let's go together.",
+            "Ester : I'm Ester. How do you do? \nFitri : ............ I'm Fitriyani Maida.",
+            "Bobby : Hi, Ace. ............ \nAce : Great! How about you? \nBobby : It's good, thanks.",
+            "The way to ask someone's news is?",
+            "It's seven o'clock in the morning. Gina will go to school. She says ............ to his parents.",
+            "It's nine o'clock in the night. Faiz will go to sleep. He says ............ to his parents."
     };
 
     // array untuk pilihan jawaban dari setiap pertanyaan
     private String pilihanjawaban [][] = {
-            {"Aswan","Aswin","Abidin","Asrul","Asdar"},
-            {"asdas","makassar","Adsasda","asdsad","adsada"},
-            {"asdada","21tahun","asasd","asda","asadsa"},
-            {"Asdad","qfwefw","smaga","asfaftt","fdsfsd"}
+            {"Nice to meet you.","Where are you?","How are you?","Glad to see you.","How is your mother?"},
+            {"I'm fine too.","Nice to meet you.","Good to see you.","See you later.","Good afternoon."},
+            {"How are you?","Good afternoon.","Nice to meet you.","Glad to see you.","See you later."},
+            {"Where are you going?","See you later.","How are you?","Nice to meet you.","How are you?"},
+            {"Good night","Good morning","Good afternoon","Good bye","Nice to meet you"},
+            {"Are you ok?","How are you?","How do you do","I am fine","Good morning"},
+            {"What are you doing?","Where have you been?","What is she doing?","Glad to see you.","How's life?"},
+            {"How is life?","Where are you?","What is that?","Do you like it?","When is your birthday?"},
+            {"Good night","Good afternoon","Good bye","Good morning","Good day"},
+            {"Good night","Good afternoon","Good bye","Good morning","Good day"}
     };
 
     // array untuk jawaban yang benar
-    private String jawabanbenar[] = {"Aswan","makassar","21tahun","smaga"};
+    private String jawabanbenar[] = {"How are you?","I'm fine too.","Nice to meet you.","See you later.",
+    "Good afternoon","How do you do","How's life?","How is life?","Good morning","Good night"};
+
 
 
     // method untuk mengembalikan nomor pertanyaan

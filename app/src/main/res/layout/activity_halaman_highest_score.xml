@@ -127,7 +127,7 @@
             android:layout_below="@+id/btnplayagain"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_quit_red"
-            android:text="Quit"
+            android:text="Exit Quiz"
             android:textAllCaps="false"
             android:textColor="@color/putih" />
 

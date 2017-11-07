@@ -13,11 +13,14 @@ import com.example.aswanabidin.englishconversation.CardHome.HalamanQuiz;
 import com.example.aswanabidin.englishconversation.HalamanDaftar;
 import com.example.aswanabidin.englishconversation.R;
 
+import org.w3c.dom.Text;
+
 public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickListener {
 
     private QuestionData pertanyaanLibrary = new QuestionData();
     private TextView scoreView;
     private TextView questionView;
+    private TextView banyakPertanyaan;
     private Button btnPilJawabanA, btnPilJawabanB, btnPilJawabanC, btnPilJawabanD, btnPilJawabanE;
     private String jawaban;
     private int score = 0;
@@ -30,6 +33,7 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
 
         scoreView = (TextView) findViewById(R.id.tvscore);
         questionView = (TextView) findViewById(R.id.tvpertanyaan);
+        banyakPertanyaan = (TextView) findViewById(R.id.tvbanyakpertanyaan);
         btnPilJawabanA = (Button) findViewById(R.id.chooseA);
         btnPilJawabanB = (Button) findViewById(R.id.chooseB);
         btnPilJawabanC = (Button) findViewById(R.id.chooseC);
@@ -67,7 +71,7 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
     }
 
     private void updateNomorPertanyaan(int pertanyaan){
-        questionView.setText("" + score+"/"+pertanyaanLibrary.getLength());
+        banyakPertanyaan.setText("" + nomorPertanyaan+"/"+pertanyaanLibrary.getLength());
     }
 
 
@@ -90,6 +94,7 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
 
         updateScore(score);
         updatePertanyaan();
+        updateNomorPertanyaan(nomorPertanyaan);
 
     }
 }
