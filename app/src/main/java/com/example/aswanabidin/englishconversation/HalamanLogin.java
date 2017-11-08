@@ -44,7 +44,7 @@ public class HalamanLogin extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btnlogin:
-                startActivity(new Intent(this, HalamanUtama.class));
+                startActivity(new Intent(this, HalamanIntroductionApp.class));
                 break;
         }
 

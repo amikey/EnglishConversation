@@ -85,7 +85,8 @@
         <activity android:name=".Quiz.HalamanQuizMedium" />
         <activity android:name=".Quiz.HalamanQuizHard" />
         <activity android:name=".Quiz.HalamanHighestScoreMedium" />
-        <activity android:name=".Quiz.HalamanHighestScoreHard"></activity>
+        <activity android:name=".Quiz.HalamanHighestScoreHard" />
+        <activity android:name=".HalamanIntroductionApp"></activity>
     </application>
 
 </manifest>
