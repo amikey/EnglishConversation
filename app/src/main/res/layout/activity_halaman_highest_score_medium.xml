@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aswanabidin.englishconversation.Quiz.HalamanHighestScoreMedium">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level Medium"
+                    android:textColor="@color/putih"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/yourscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:text="Your Score"
+            android:textColor="@color/hitam"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/bgyourscore"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/yourscore"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_score" />
+
+        <TextView
+            android:id="@+id/tvyourscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/yourscore"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:text="123"
+            android:textColor="@color/hitam"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/highscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bgyourscore"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="High Score"
+            android:textColor="@color/hitam"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/bghighscore"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/highscore"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_score" />
+
+        <TextView
+            android:id="@+id/tvhighscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/highscore"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:text="123"
+            android:textColor="@color/hitam"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnplayagain"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/tvhighscore"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/btn_rounded_corners"
+            android:text="Play Again"
+            android:textAllCaps="false"
+            android:textColor="@color/putih" />
+
+        <Button
+            android:id="@+id/btnkeluarquiz"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/btnplayagain"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_quit_red"
+            android:text="Exit Quiz"
+            android:textAllCaps="false"
+            android:textColor="@color/putih" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

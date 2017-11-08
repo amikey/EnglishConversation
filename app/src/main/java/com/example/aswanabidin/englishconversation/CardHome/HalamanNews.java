@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.example.aswanabidin.englishconversation.HalamanUtama;
 import com.example.aswanabidin.englishconversation.R;
@@ -14,6 +16,8 @@ import com.example.aswanabidin.englishconversation.R;
 public class HalamanNews extends AppCompatActivity {
 
     private WebView webView;
+    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +29,14 @@ public class HalamanNews extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        progressBar = (ProgressBar) findViewById(R.id.progress_circle);
+
         webView = (WebView) findViewById(R.id.viewnews);
+        progressBar.setVisibility(View.VISIBLE); //progress bar mulai
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new MyBrowser());
         webView.loadUrl("http://www.bbc.com/news/science_and_environment");
+        progressBar.setVisibility(View.GONE); //progress bar berhenti ketika cardview muncul
 
     }
 
@@ -38,6 +46,7 @@ public class HalamanNews extends AppCompatActivity {
             webView.loadUrl(url);
             return true;
         }
+
     }
 
     @Override

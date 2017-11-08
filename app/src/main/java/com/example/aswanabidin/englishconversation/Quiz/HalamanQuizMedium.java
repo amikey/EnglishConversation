@@ -9,15 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.aswanabidin.englishconversation.CardHome.HalamanQuiz;
-import com.example.aswanabidin.englishconversation.HalamanDaftar;
 import com.example.aswanabidin.englishconversation.R;
 
-import org.w3c.dom.Text;
+public class HalamanQuizMedium extends AppCompatActivity implements View.OnClickListener {
 
-public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickListener {
-
-    private QuestionData pertanyaanLibrary = new QuestionData();
+    private MediumQuestionData pertanyaanLibrary = new MediumQuestionData();
     private TextView scoreView;
     private TextView questionView;
     private TextView banyakPertanyaan;
@@ -29,7 +25,7 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_halaman_quiz_easy);
+        setContentView(R.layout.activity_halaman_quiz_medium);
 
         scoreView = (TextView) findViewById(R.id.tvscore);
         questionView = (TextView) findViewById(R.id.tvpertanyaan);
@@ -42,7 +38,6 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
         updatePertanyaan();
         updateScore(score); // menampilkan total skor dari user
         updateNomorPertanyaan(nomorPertanyaan);
-
     }
 
     private void updatePertanyaan(){
@@ -58,9 +53,9 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
         } else {
             Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "It was the last question!", Snackbar.LENGTH_LONG);
             View vtitle = snackbar.getView();
-            vtitle.setBackgroundColor(ContextCompat.getColor(HalamanQuizEasy.this, R.color.biru));
+            vtitle.setBackgroundColor(ContextCompat.getColor(HalamanQuizMedium.this, R.color.biru));
             snackbar.show();
-            Intent intent = new Intent(HalamanQuizEasy.this, HalamanHighestScore.class);
+            Intent intent = new Intent(HalamanQuizMedium.this, HalamanHighestScoreMedium.class);
             intent.putExtra("score",score);
             startActivity(intent);
         }
@@ -74,7 +69,6 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
         banyakPertanyaan.setText("" + nomorPertanyaan+"/"+pertanyaanLibrary.getLength());
     }
 
-
     @Override
     public void onClick(View v) {
         Button answer = (Button) v;
@@ -83,19 +77,18 @@ public class HalamanQuizEasy extends AppCompatActivity implements View.OnClickLi
             score = score + 10;
             Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Correct Answer!", Snackbar.LENGTH_LONG);
             View vtitle = snackbar.getView();
-            vtitle.setBackgroundColor(ContextCompat.getColor(HalamanQuizEasy.this, R.color.hijau));
+            vtitle.setBackgroundColor(ContextCompat.getColor(HalamanQuizMedium.this, R.color.hijau));
             snackbar.show();
         } else {
             Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Wrong Answer!", Snackbar.LENGTH_LONG);
             View vtitle = snackbar.getView();
-            vtitle.setBackgroundColor(ContextCompat.getColor(HalamanQuizEasy.this, R.color.merah));
+            vtitle.setBackgroundColor(ContextCompat.getColor(HalamanQuizMedium.this, R.color.merah));
             snackbar.show();
         }
 
         updateScore(score);
         updatePertanyaan();
         updateNomorPertanyaan(nomorPertanyaan);
-
     }
 
     @Override

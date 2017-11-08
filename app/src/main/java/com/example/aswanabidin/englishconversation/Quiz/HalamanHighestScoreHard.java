@@ -10,13 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.aswanabidin.englishconversation.CardHome.HalamanAccount;
 import com.example.aswanabidin.englishconversation.CardHome.HalamanQuiz;
-import com.example.aswanabidin.englishconversation.HalamanLogin;
 import com.example.aswanabidin.englishconversation.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class HalamanHighestScore extends AppCompatActivity {
+public class HalamanHighestScoreHard extends AppCompatActivity {
 
     private TextView yourScore, highScore;
     private Button btnplayAgain, btnQuit;
@@ -24,7 +22,7 @@ public class HalamanHighestScore extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_halaman_highest_score);
+        setContentView(R.layout.activity_halaman_highest_score_hard);
 
         yourScore = (TextView) findViewById(R.id.tvyourscore);
         highScore = (TextView) findViewById(R.id.tvhighscore);
@@ -51,14 +49,14 @@ public class HalamanHighestScore extends AppCompatActivity {
         btnplayAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(HalamanHighestScore.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(HalamanHighestScoreHard.this);
                 builder.setTitle("Play Again")
                         .setMessage("Are you sure play again?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 FirebaseAuth.getInstance().signOut();
-                                startActivity(new Intent(getBaseContext(), HalamanQuizEasy.class));
+                                startActivity(new Intent(getBaseContext(), HalamanQuizHard.class));
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -75,7 +73,7 @@ public class HalamanHighestScore extends AppCompatActivity {
         btnQuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(HalamanHighestScore.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(HalamanHighestScoreHard.this);
                 builder.setTitle("Exit")
                         .setMessage("Are you sure exit quiz?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

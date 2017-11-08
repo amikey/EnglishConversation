@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.example.aswanabidin.englishconversation.HalamanUtama;
 import com.example.aswanabidin.englishconversation.Quiz.HalamanQuizEasy;
+import com.example.aswanabidin.englishconversation.Quiz.HalamanQuizHard;
+import com.example.aswanabidin.englishconversation.Quiz.HalamanQuizMedium;
 import com.example.aswanabidin.englishconversation.R;
 
 public class HalamanQuiz extends AppCompatActivity {
@@ -41,11 +43,26 @@ public class HalamanQuiz extends AppCompatActivity {
 
         medium = (Button) findViewById(R.id.btnmedium);
         Typeface typeface1 = Typeface.createFromAsset(getAssets(), "fonts/Cabin-Regular.otf");
-        easy.setTypeface(typeface1);
+        medium.setTypeface(typeface1);
+        medium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HalamanQuiz.this, HalamanQuizMedium.class);
+                startActivity(intent);
+            }
+        });
+
 
         hard = (Button) findViewById(R.id.btnhard);
         Typeface typeface2 = Typeface.createFromAsset(getAssets(), "fonts/Cabin-Regular.otf");
-        easy.setTypeface(typeface2);
+        hard.setTypeface(typeface2);
+        hard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HalamanQuiz.this, HalamanQuizHard.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
