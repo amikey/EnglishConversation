@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvtitlearticle"
             android:layout_marginLeft="20dp"
-            android:text="email user"
+            android:text="Admin"
             android:textColor="@color/abutext"
             android:textSize="12sp" />
 

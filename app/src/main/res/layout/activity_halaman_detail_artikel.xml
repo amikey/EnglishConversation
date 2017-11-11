@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,91 +12,52 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapseToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_collapseMode="pin"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            android:layout_height="200dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="left">
+            <ImageView
+                android:id="@+id/imgartikel"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="Detail Articles"
+                android:scaleType="centerCrop" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <TextView
                     android:id="@+id/tvtitlearticle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Detail Article"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Detail Articles"
                     android:textColor="@color/putih"
                     android:textSize="18sp" />
-
-            </RelativeLayout>
-
-        </android.support.v7.widget.Toolbar>
-
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/imgartikel"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@+id/appbarlayout"
-        android:background="@color/abutext"
-        android:scaleType="centerCrop" />
 
-    <!--<TextView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/appbarlayout"-->
-    <!--android:layout_marginLeft="20dp"-->
-    <!--android:layout_marginTop="20dp"-->
-    <!--android:text="Judul"-->
-    <!--android:textColor="@color/biru"-->
-    <!--android:textSize="18sp"-->
-    <!--android:textStyle="bold" />-->
-
-    <TextView
-        android:id="@+id/tvemail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgartikel"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Email pengguna"
-        android:textColor="@color/biru"
-        android:textSize="13sp" />
-
-    <TextView
-        android:id="@+id/tvdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/imgartikel"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Tanggal"
-        android:textColor="@color/biru"
-        android:textSize="13sp" />
-
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imgartikel">
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/tvdeskripsi"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:text="Deskripsi" />
+        <include layout="@layout/content_detail_artikel" />
+    </android.support.v4.widget.NestedScrollView>
 
-    </ScrollView>
-
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

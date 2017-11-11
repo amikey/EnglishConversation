@@ -67,24 +67,24 @@
         android:layout_centerInParent="true"
         android:indeterminate="true" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_above="@+id/reclcyerViewConversation"
-        android:layout_alignParentBottom="true"
-        android:gravity="bottom"
-        android:background="@color/putih"
-        android:padding="10dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:layout_above="@+id/reclcyerViewConversation"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:gravity="bottom"-->
+        <!--android:background="@color/putih"-->
+        <!--android:padding="10dp">-->
 
-        <Button
-            android:id="@+id/btntambahconversation"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/btn_rounded_corners"
-            android:text="Tambah Conversation"
-            android:textAllCaps="false"
-            android:textColor="@color/putih" />
+        <!--<Button-->
+            <!--android:id="@+id/btntambahconversation"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/btn_rounded_corners"-->
+            <!--android:text="Tambah Conversation"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:textColor="@color/putih" />-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
 </RelativeLayout>
