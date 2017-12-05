@@ -132,7 +132,7 @@ public class HalamanTambahArtikel extends AppCompatActivity implements View.OnCl
                     public void onDateSet(DatePicker datePicker, int selectedyear, int selectedmonth, int selectedday) {
                         String tanggal;
                         long tanggalpilih = 0;
-                        if (selectedmonth < 10) {
+                        if (selectedmonth < 0) {
                             tanggal = String.valueOf(selectedday + "-" + (++selectedmonth) + "-" + year);
                         } else {
                             tanggal = String.valueOf(selectedday + "-" + (++selectedmonth) + "-" + year);
@@ -144,10 +144,13 @@ public class HalamanTambahArtikel extends AppCompatActivity implements View.OnCl
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        date.setText(tanggal);
+                        if (tanggalpilih > System.currentTimeMillis()) {
+                            Toast.makeText(HalamanTambahArtikel.this, "No Current Time", Toast.LENGTH_SHORT).show();
+                        } else
+                            date.setText(tanggal);
                     }
                 },year, month, day);
-                mDatePicker.setTitle("Pilih Tanggal");
+                mDatePicker.setTitle("Choose Date");
                 mDatePicker.show();
             }
         });

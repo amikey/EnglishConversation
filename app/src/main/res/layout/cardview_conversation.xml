@@ -26,6 +26,7 @@
             android:layout_height="70dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:transitionName="myImage"
             android:background="@color/abutext" />
 
         <TextView
@@ -57,6 +58,7 @@
             android:id="@+id/tvpercakapan"
             android:textColor="@color/putih"
             android:textSize="8sp"
+            android:transitionName="mydesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvnamaindonesia"

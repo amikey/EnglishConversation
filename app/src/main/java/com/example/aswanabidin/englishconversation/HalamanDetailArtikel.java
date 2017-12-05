@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.example.aswanabidin.englishconversation.CardHome.HalamanArticle;
 import com.example.aswanabidin.englishconversation.Model.ArtikelModel;
 import com.example.aswanabidin.englishconversation.Model.ConversationModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.StorageReference;
@@ -26,7 +28,7 @@ import com.squareup.picasso.Picasso;
 
 public class HalamanDetailArtikel extends AppCompatActivity {
 
-    private TextView tvtitle, tvdate, tvdeskripsi;
+    private TextView tvtitle, tvdate, tvdeskripsi, email;
     private ImageView imageView;
     String stvtitle, stvdate, stvdeskripsi, surl;
     private StorageReference mSotrageRef;
@@ -46,10 +48,15 @@ public class HalamanDetailArtikel extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser isLogin = firebaseAuth.getCurrentUser();
+
         tvtitle = (TextView) findViewById(R.id.tvtitlearticle);
         tvdate = (TextView) findViewById(R.id.tvdate);
         tvdeskripsi = (TextView) findViewById(R.id.tvdeskripsi);
+        email = (TextView) findViewById(R.id.tvemail);
         imageView = (ImageView) findViewById(R.id.imgartikel);
+        email.setText(isLogin.getEmail());
 
         Bundle bundle;
         bundle = getIntent().getExtras();

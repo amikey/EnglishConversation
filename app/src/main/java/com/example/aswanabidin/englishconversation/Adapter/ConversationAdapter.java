@@ -3,8 +3,10 @@ package com.example.aswanabidin.englishconversation.Adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,9 +60,12 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, HalamanDetailConversation.class);
+//                Pair<View,String> pair1 = Pair.create(view.findViewById(R.id.imgconversation), "myimage");
+//                Pair<View,String> pair2 = Pair.create(view.findViewById(R.id.tvdeskripsi), "mydesc");
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity)context, view.findViewById(R.id.imgconversation), "myImage");
                 intent.putExtra("conversation", conversationModel);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                context.startActivity(intent, optionsCompat.toBundle());
             }
         });
 

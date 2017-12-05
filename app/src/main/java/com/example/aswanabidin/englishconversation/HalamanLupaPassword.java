@@ -50,7 +50,7 @@ public class HalamanLupaPassword extends AppCompatActivity {
                 String email = etemaillupapass.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
-                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Email empty", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Please fill your email!", Snackbar.LENGTH_LONG);
                     View vtitle = snackbar.getView();
                     vtitle.setBackgroundColor(ContextCompat.getColor(HalamanLupaPassword.this, R.color.biru));
                     snackbar.show();

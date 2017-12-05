@@ -25,11 +25,12 @@
             android:id="@+id/imgartikel"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:transitionName="myImage"
             android:background="@color/abutext" />
 
         <TextView
             android:id="@+id/tvtitlearticle"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgartikel"
             android:layout_marginLeft="20dp"
@@ -39,11 +40,21 @@
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/tvwritten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvtitlearticle"
+            android:text="Written by"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="12sp" />
+
+        <TextView
             android:id="@+id/tvemail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvtitlearticle"
-            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/tvwritten"
             android:text="Admin"
             android:textColor="@color/abutext"
             android:textSize="12sp" />
@@ -53,10 +64,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvemail"
+            android:layout_marginBottom="7dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
             android:text="Deskripsi"
+            android:textAlignment="gravity"
             android:textColor="@color/hitam"
             android:textSize="12sp" />
 
@@ -66,9 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/imgartikel"
-            android:layout_marginLeft="200dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/tvemail"
+            android:layout_toRightOf="@+id/tvtitlearticle"
             android:text="Date"
             android:textColor="@color/abutext"
             android:textSize="12sp" />

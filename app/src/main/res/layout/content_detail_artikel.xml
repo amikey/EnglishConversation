@@ -4,12 +4,21 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvemail"
+        android:id="@+id/tvwritten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvtitlearticle"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:text="Written by"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tvemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvwritten"
+        android:layout_marginLeft="10dp"
         android:text="Admin"
         android:textColor="@color/biru"
         android:textSize="13sp" />
@@ -27,14 +36,16 @@
         android:textSize="13sp" />
 
 
-    <TextView
+    <com.uncopt.android.widget.text.justify.JustifiedTextView
         android:id="@+id/tvdeskripsi"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tvemail"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:text="Deskripsi" />
+        android:text="Deskripsi"
+        android:textAlignment="gravity"
+        android:textColor="@color/hitam" />
 
 </RelativeLayout>

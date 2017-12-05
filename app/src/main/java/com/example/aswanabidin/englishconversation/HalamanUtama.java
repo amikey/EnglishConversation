@@ -31,7 +31,7 @@ public class HalamanUtama extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         judul = (TextView) findViewById(R.id.toolbarTitle);
-        judul.setText("English Conversation");
+        judul.setText("Dailysh");
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Cabin-Regular.otf");
         judul.setTypeface(typeface);
 
@@ -99,9 +99,12 @@ public class HalamanUtama extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(this, HalamanLogin.class);
-        startActivity(intent);
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
+
 
 
 }

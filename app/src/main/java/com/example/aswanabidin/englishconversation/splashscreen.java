@@ -7,17 +7,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.wang.avi.AVLoadingIndicatorView;
+
 public class splashscreen extends Activity {
 
-    private static int SPLASH_TIME_OUT = 2000;
+    private static int SPLASH_TIME_OUT = 3000;
+    private AVLoadingIndicatorView avi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
 
+        String indicator = getIntent().getStringExtra("indicator");
+        avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
+        avi.setIndicator(indicator);
+
         ImageView myImageView = (ImageView) findViewById(R.id.imgsplash);
-        myImageView.setImageResource(R.drawable.logoevers);
+        myImageView.setImageResource(R.drawable.logodaylishputih);
 
         new Handler().postDelayed(new Runnable() {
             @Override

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,64 +12,69 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapseToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_collapseMode="pin"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            android:layout_height="200dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="left">
+            <ImageView
+                android:id="@+id/imgconversation"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:transitionName="myImage"
+                android:layout_below="@+id/appbarlayout"
+                android:scaleType="centerCrop" />
 
-                <TextView
-                    android:id="@+id/tvnamaenglish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Detail Conversation"
-                    android:textColor="@color/putih"
-                    android:textSize="18sp" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <TextView
-                    android:id="@+id/tvnamaindonesia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvnamaenglish"
-                    android:text="Detail Conversation"
-                    android:textColor="@color/putih"
-                    android:textSize="14sp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvnamaenglish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Detail Conversation"
+                        android:textColor="@color/putih"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvnamaindonesia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvnamaenglish"
+                        android:text="Detail Conversation"
+                        android:textColor="@color/putih"
+                        android:textSize="14sp" />
+                </RelativeLayout>
 
 
-            </RelativeLayout>
-
-        </android.support.v7.widget.Toolbar>
-
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/imgconversation"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@+id/appbarlayout"
-        android:background="@color/abutext"
-        android:scaleType="centerCrop" />
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/tvdeskripsi"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imgconversation">
+        android:clipToPadding="false"
+        android:transitionName="mydesc"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <TextView
-            android:id="@+id/tvpercakapan"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp" />
-
-    </ScrollView>
+        <include layout="@layout/content_detail_conversation" />
+    </android.support.v4.widget.NestedScrollView>
 
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -31,7 +31,7 @@
             android:layout_marginTop="20dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="You can learn with video"
+            android:text="Improve pronunciation of the various videos provided!"
             android:textAlignment="center"
             android:textColor="@color/putih"
             android:textSize="16dp" />

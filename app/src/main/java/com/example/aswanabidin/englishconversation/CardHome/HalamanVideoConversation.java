@@ -26,6 +26,7 @@ public class HalamanVideoConversation extends AppCompatActivity {
     RecyclerView recyclerView;
     Vector<VideoModel> videoModels = new Vector<VideoModel>();
     private ProgressBar progressBar;
+    List list = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,10 @@ public class HalamanVideoConversation extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progress_circle);
 
+
         progressBar.setVisibility(View.VISIBLE); //progress bar mulai
+
+        progressBar.setVisibility(View.GONE); //progress bar berhenti ketika cardview muncul
 
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/EY0vwK7a2yg\" frameborder=\"0\" allowfullscreen></iframe>"));
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/XVQlnP5Yu2A\" frameborder=\"0\" allowfullscreen></iframe>"));
@@ -51,7 +55,6 @@ public class HalamanVideoConversation extends AppCompatActivity {
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/ns6-ZtCxrdM\" frameborder=\"0\" allowfullscreen></iframe>"));
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/oYGSV5ly2KY\" frameborder=\"0\" allowfullscreen></iframe>"));
 
-        progressBar.setVisibility(View.GONE); //progress bar berhenti ketika cardview muncul
 
         VideoAdapter videoAdapter = new VideoAdapter(videoModels);
         recyclerView.setAdapter(videoAdapter);

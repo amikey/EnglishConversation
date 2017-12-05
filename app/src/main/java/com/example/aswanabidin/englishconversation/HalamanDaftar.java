@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class HalamanDaftar extends AppCompatActivity{
+public class HalamanDaftar extends AppCompatActivity {
 
     private EditText namalengkap, username, email, password;
     private ProgressDialog progressDialog;
@@ -61,6 +61,31 @@ public class HalamanDaftar extends AppCompatActivity{
                 final String semail = email.getText().toString().trim();
                 final String spassword = password.getText().toString().trim();
 
+                if (TextUtils.isEmpty(snamalengkap)){
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Please fill your name!", Snackbar.LENGTH_LONG);
+                    View vtitle = snackbar.getView();
+                    vtitle.setBackgroundColor(ContextCompat.getColor(HalamanDaftar.this, R.color.biru));
+                    snackbar.show();
+                }
+                if (TextUtils.isEmpty(susername)){
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Please fill your username!", Snackbar.LENGTH_LONG);
+                    View vtitle = snackbar.getView();
+                    vtitle.setBackgroundColor(ContextCompat.getColor(HalamanDaftar.this, R.color.biru));
+                    snackbar.show();
+                }
+                if (TextUtils.isEmpty(semail)){
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Please fill your email!", Snackbar.LENGTH_LONG);
+                    View vtitle = snackbar.getView();
+                    vtitle.setBackgroundColor(ContextCompat.getColor(HalamanDaftar.this, R.color.biru));
+                    snackbar.show();
+                }
+                if (TextUtils.isEmpty(spassword)){
+                    Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Please fill your password!", Snackbar.LENGTH_LONG);
+                    View vtitle = snackbar.getView();
+                    vtitle.setBackgroundColor(ContextCompat.getColor(HalamanDaftar.this, R.color.biru));
+                    snackbar.show();
+                }
+
                 progressDialog.setMessage("Create Account...");
                 progressDialog.show();
 
@@ -68,12 +93,16 @@ public class HalamanDaftar extends AppCompatActivity{
                 firebaseAuth.createUserWithEmailAndPassword(semail, spassword).addOnCompleteListener(HalamanDaftar.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Registration complete, please check email!", Snackbar.LENGTH_LONG);
-                        View vtitle = snackbar.getView();
-                        vtitle.setBackgroundColor(ContextCompat.getColor(HalamanDaftar.this, R.color.biru));
-                        snackbar.show();
 
-                        if (task.isSuccessful()){
+                        Toast.makeText(HalamanDaftar.this, "Registration complete, please check email!", Toast.LENGTH_SHORT).show();
+//                        Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Registration complete, please check email!", Snackbar.LENGTH_LONG);
+//                        View vtitle = snackbar.getView();
+//                        vtitle.setBackgroundColor(ContextCompat.getColor(HalamanDaftar.this, R.color.biru));
+//                        snackbar.show();
+                        Intent intent = new Intent(HalamanDaftar.this, HalamanLogin.class);
+                        startActivity(intent);
+
+                        if (task.isSuccessful()) {
                             firebaseAuth.signInWithEmailAndPassword(semail, spassword);
 
                             DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("users");
@@ -100,17 +129,17 @@ public class HalamanDaftar extends AppCompatActivity{
 
     }
 
-    public void emailVerification(){
+    public void emailVerification() {
         user = firebaseAuth.getCurrentUser();
         user.sendEmailVerification().addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     Intent intent = new Intent(HalamanDaftar.this, HalamanLogin.class);
                     startActivity(intent);
                     finish();
-                }else {
+                } else {
                     Log.e("onCreate : ", " sendEmailVerification", task.getException());
                     Toast.makeText(HalamanDaftar.this,
                             "Gagal mengirimkan verifikasi ke email.",

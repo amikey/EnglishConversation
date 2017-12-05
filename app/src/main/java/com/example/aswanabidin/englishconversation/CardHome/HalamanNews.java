@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.example.aswanabidin.englishconversation.HalamanUtama;
@@ -17,6 +18,7 @@ public class HalamanNews extends AppCompatActivity {
 
     private WebView webView;
     private ProgressBar progressBar;
+    private EditText urlEditText;
 
 
     @Override

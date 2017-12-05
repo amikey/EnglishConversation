@@ -23,6 +23,7 @@ import com.example.aswanabidin.englishconversation.HalamanLogin;
 import com.example.aswanabidin.englishconversation.HalamanUtama;
 import com.example.aswanabidin.englishconversation.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -46,10 +47,12 @@ public class HalamanAccount extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        namalengkap = (TextView) findViewById(R.id.tvnamalengkap);
-        username = (TextView) findViewById(R.id.tvusername);
+        firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser isLogin = firebaseAuth.getCurrentUser();
+//        namalengkap = (TextView) findViewById(R.id.tvnamalengkap);
+//        username = (TextView) findViewById(R.id.tvusername);
         email = (TextView) findViewById(R.id.tvemailuser);
-        password = (TextView) findViewById(R.id.tvpassword);
+        email.setText(isLogin.getEmail());
 
         btnlogout = (Button) findViewById(R.id.btnlogout);
         btnlogout.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +104,7 @@ public class HalamanAccount extends AppCompatActivity {
     public void onBackPressed(){
         super.onBackPressed();
         Intent intent = new Intent(getBaseContext(), HalamanUtama.class);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         startActivity(intent);
         finish();
     }

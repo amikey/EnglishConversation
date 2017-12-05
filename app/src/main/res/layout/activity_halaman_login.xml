@@ -13,7 +13,7 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
-        android:src="@drawable/logobiru" />
+        android:src="@drawable/logodaylishbiru" />
 
     <RelativeLayout
         android:layout_width="match_parent"
