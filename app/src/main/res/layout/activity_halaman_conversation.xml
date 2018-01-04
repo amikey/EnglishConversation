@@ -34,6 +34,13 @@
                     android:textColor="@color/putih"
                     android:textSize="18sp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/toolbarTitle"
+                    android:text="Percakapan"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
 
         </android.support.v7.widget.Toolbar>
@@ -45,12 +52,11 @@
     <!-- item recylerview -->
     <RelativeLayout
         android:id="@+id/reclcyerViewConversation"
-        android:layout_below="@+id/appbarlayout"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbarlayout">
 
-        <android.support.v7.widget.RecyclerView
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/listConversation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -59,31 +65,41 @@
 
     </RelativeLayout>
 
-    <ProgressBar
-        android:id="@+id/progress_circle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/progress"
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:indeterminate="true" />
+        android:visibility="visible"
+        app:indicatorColor="@color/biru"
+        app:indicatorName="BallPulseIndicator" />
+
+    <!--<ProgressBar-->
+    <!--android:id="@+id/progress_circle"-->
+    <!--android:layout_width="50dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/progress"-->
+    <!--android:indeterminate="true" />-->
 
     <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="70dp"-->
-        <!--android:layout_above="@+id/reclcyerViewConversation"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:gravity="bottom"-->
-        <!--android:background="@color/putih"-->
-        <!--android:padding="10dp">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="70dp"-->
+    <!--android:layout_above="@+id/reclcyerViewConversation"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:gravity="bottom"-->
+    <!--android:background="@color/putih"-->
+    <!--android:padding="10dp">-->
 
-        <!--<Button-->
-            <!--android:id="@+id/btntambahconversation"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@drawable/btn_rounded_corners"-->
-            <!--android:text="Tambah Conversation"-->
-            <!--android:textAllCaps="false"-->
-            <!--android:textColor="@color/putih" />-->
+    <!--<Button-->
+    <!--android:id="@+id/btntambahconversation"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/btn_rounded_corners"-->
+    <!--android:text="Tambah Conversation"-->
+    <!--android:textAllCaps="false"-->
+    <!--android:textColor="@color/putih" />-->
 
     <!--</LinearLayout>-->
 

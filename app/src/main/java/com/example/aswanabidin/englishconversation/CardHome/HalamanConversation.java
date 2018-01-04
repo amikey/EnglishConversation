@@ -1,8 +1,10 @@
 package com.example.aswanabidin.englishconversation.CardHome;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 
@@ -46,6 +49,7 @@ public class HalamanConversation extends AppCompatActivity {
     public static final String FB_DATABASE_PATH = "conversation";
 
     private ProgressBar progressBar;
+    private AVLoadingIndicatorView avi;
 
 
     @Override
@@ -58,6 +62,10 @@ public class HalamanConversation extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        String indicator = getIntent().getStringExtra("indicator");
+        avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
+        avi.setIndicator(indicator);
+
         mAdapter = new ConversationAdapter(HalamanConversation.this);
         recyclerView = (RecyclerView) findViewById(R.id.listConversation);
         recyclerView.setAdapter(mAdapter);
@@ -66,7 +74,7 @@ public class HalamanConversation extends AppCompatActivity {
 
         cardView = (CardView) findViewById(R.id.cardview_conversation);
 
-        progressBar = (ProgressBar) findViewById(R.id.progress_circle);
+//        progressBar = (ProgressBar) findViewById(R.id.progress_circle);
 
 
 //        btntambahconversation = (Button) findViewById(R.id.btntambahconversation);
@@ -87,7 +95,8 @@ public class HalamanConversation extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                progressBar.setVisibility(View.VISIBLE); //progress bar mulai
+//                progressBar.setVisibility(View.VISIBLE); //progress bar mulai
+                avi.setVisibility(View.VISIBLE);
 
                 conversationModels = new ArrayList<ConversationModel>();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
@@ -104,7 +113,8 @@ public class HalamanConversation extends AppCompatActivity {
                     conversation.setUrl(url);
                     mAdapter.addData(conversation);
                 }
-                progressBar.setVisibility(View.GONE); //progress bar berhenti ketika cardview muncul
+//                progressBar.setVisibility(View.GONE); //progress bar berhenti ketika cardview muncul
+                avi.setVisibility(View.GONE);
             }
 
             @Override

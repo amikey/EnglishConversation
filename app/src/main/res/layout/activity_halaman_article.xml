@@ -33,12 +33,20 @@
                     android:textColor="@color/putih"
                     android:textSize="18sp" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/toolbarTitle"
+                    android:text="Artikel"
+                    android:textSize="14sp" />
+
                 <ImageButton
                     android:id="@+id/imgtambahartikel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="20dp"
+                    android:layout_centerInParent="true"
                     android:background="@color/biru"
                     android:src="@drawable/ic_create" />
 
@@ -57,13 +65,23 @@
 
     </android.support.v7.widget.RecyclerView>
 
-    <ProgressBar
-        android:id="@+id/progress_circle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/progress"
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:indeterminate="true" />
+        android:visibility="visible"
+        app:indicatorColor="@color/biru"
+        app:indicatorName="BallPulseIndicator" />
+
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progress_circle"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@drawable/progress"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:indeterminate="true" />-->
 
 
 </RelativeLayout>

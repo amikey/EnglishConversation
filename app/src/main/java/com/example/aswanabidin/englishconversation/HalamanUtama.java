@@ -31,7 +31,7 @@ public class HalamanUtama extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         judul = (TextView) findViewById(R.id.toolbarTitle);
-        judul.setText("Dailysh");
+        judul.setText("Daily English");
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Cabin-Regular.otf");
         judul.setTypeface(typeface);
 

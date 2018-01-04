@@ -9,18 +9,18 @@ public class QuestionData {
     // array untuk pertanyaan
     private String pertanyaan [] = {
             "Faiz and Rizqi is in the cinema to watch a movie. Suddenly they meets Aji, friend of Faiz" +
-                    "outside of the cinema. \nFaiz : Hello Aji, Good Afternoon. \nAji : Good Afternoon, Faiz ............",
-            "Faiz : I'm fine thank you and how about you? \nAji : ............",
-            "Faiz : Oh, this is my friend, Rizki. \nAji : Hello Rizki, my name is Aji. ............",
+                    "outside of the cinema. \nFaiz : Hello Aji, Good Afternoon. \nAji : Good Afternoon, Faiz _______",
+            "Faiz : I'm fine thank you and how about you? \nAji : _______",
+            "Faiz : Oh, this is my friend, Rizki. \nAji : Hello Rizki, my name is Aji. _______",
             "Rizki : Hi, my name is Rizki. Nice to meet you too. \nFaiz : Well Aji, I think we have to go now," +
-                    "the movie is started to play. \nAji : Oh okay. ............ \nFaiz : See you.",
-            "Ciko : ............, where are you going? \nVita : Good afternoon, I'll have lunch at the canteen." +
+                    "the movie is started to play. \nAji : Oh okay. _______ \nFaiz : See you.",
+            "Ciko : _______, where are you going? \nVita : Good afternoon, I'll have lunch at the canteen." +
                     "\nCiko : Let's go together.",
-            "Ester : I'm Ester. How do you do? \nFitri : ............ I'm Fitriyani Maida.",
-            "Bobby : Hi, Ace. ............ \nAce : Great! How about you? \nBobby : It's good, thanks.",
+            "Ester : I'm Ester. How do you do? \nFitri : _______ I'm Fitriyani Maida.",
+            "Bobby : Hi, Ace. _______ \nAce : Great! How about you? \nBobby : It's good, thanks.",
             "The way to ask someone's news is?",
-            "It's seven o'clock in the morning. Gina will go to school. She says ............ to his parents.",
-            "It's nine o'clock in the night. Faiz will go to sleep. He says ............ to his parents."
+            "It's seven o'clock in the morning. Gina will go to school. She says _______ to his parents.",
+            "It's nine o'clock in the night. Faiz will go to sleep. He says _______ to his parents."
     };
 
     // array untuk pilihan jawaban dari setiap pertanyaan

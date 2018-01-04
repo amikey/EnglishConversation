@@ -1,7 +1,9 @@
 package com.example.aswanabidin.englishconversation.CardHome;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,6 +25,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.ArrayList;
 
@@ -39,6 +42,9 @@ public class HalamanArticle extends AppCompatActivity {
 
     public static final String FB_DATABASE_PATH = "artikel";
     private ProgressBar progressBar;
+    private AVLoadingIndicatorView avi;
+
+
     public HalamanArticle(){
         //required
     }
@@ -53,6 +59,10 @@ public class HalamanArticle extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        String indicator = getIntent().getStringExtra("indicator");
+        avi = (AVLoadingIndicatorView) findViewById(R.id.avi);
+        avi.setIndicator(indicator);
 
         btntambahartikel = (ImageButton) findViewById(R.id.imgtambahartikel);
         btntambahartikel.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +87,8 @@ public class HalamanArticle extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                progressBar.setVisibility(View.VISIBLE);
+//                progressBar.setVisibility(View.VISIBLE);
+                avi.setVisibility(View.VISIBLE);
                 artikelModels = new ArrayList<ArtikelModel>();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
@@ -93,7 +104,8 @@ public class HalamanArticle extends AppCompatActivity {
                     artikel.setUrl(url);
                     mAdapter.addData(artikel);
                 }
-                progressBar.setVisibility(View.GONE);
+//                progressBar.setVisibility(View.GONE);
+                avi.setVisibility(View.GONE);
             }
 
             @Override

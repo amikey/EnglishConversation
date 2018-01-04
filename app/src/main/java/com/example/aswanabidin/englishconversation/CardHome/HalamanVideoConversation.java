@@ -1,6 +1,8 @@
 package com.example.aswanabidin.englishconversation.CardHome;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -49,18 +51,17 @@ public class HalamanVideoConversation extends AppCompatActivity {
 
         progressBar.setVisibility(View.GONE); //progress bar berhenti ketika cardview muncul
 
-        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/EY0vwK7a2yg\" frameborder=\"0\" allowfullscreen></iframe>"));
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/kxb8EpyhKro\" frameborder=\"0\" allowfullscreen></iframe>"));
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/XVQlnP5Yu2A\" frameborder=\"0\" allowfullscreen></iframe>"));
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/SKTQHHgC0_0\" frameborder=\"0\" allowfullscreen></iframe>"));
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/ns6-ZtCxrdM\" frameborder=\"0\" allowfullscreen></iframe>"));
         videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/oYGSV5ly2KY\" frameborder=\"0\" allowfullscreen></iframe>"));
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/M-A2yJQLiWI\" frameborder=\"0\" allowfullscreen></iframe>"));
+        videoModels.add(new VideoModel("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/XtEixjKMPfM\" frameborder=\"0\" allowfullscreen></iframe>"));
 
 
         VideoAdapter videoAdapter = new VideoAdapter(videoModels);
         recyclerView.setAdapter(videoAdapter);
-
-
-
 
     }
 
