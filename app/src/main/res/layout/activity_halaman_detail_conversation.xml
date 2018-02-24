@@ -21,13 +21,22 @@
             app:expandedTitleTextAppearance="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                app:indicatorColor="@color/putih"
+                app:indicatorName="BallPulseIndicator" />
+
             <ImageView
                 android:id="@+id/imgconversation"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:transitionName="myImage"
                 android:layout_below="@+id/appbarlayout"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:transitionName="myImage" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

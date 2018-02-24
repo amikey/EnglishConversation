@@ -56,12 +56,22 @@
         android:layout_below="@+id/appbarlayout"
         android:paddingBottom="10dp"></android.support.v7.widget.RecyclerView>
 
-    <ProgressBar
-        android:id="@+id/progress_circle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progress_circle"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:background="@drawable/progress"-->
+        <!--android:indeterminate="true" />-->
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:background="@drawable/progress"
-        android:indeterminate="true" />
+        android:visibility="visible"
+        app:indicatorColor="@color/biru"
+        app:indicatorName="BallPulseIndicator" />
 
 </RelativeLayout>

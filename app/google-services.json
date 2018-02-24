@@ -49,6 +49,37 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095273014892:android:e36583cf5a9fca3d",
+        "android_client_info": {
+          "package_name": "com.mumtaazstudio.aswanabidin.englishconversation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095273014892-uk0s51v3i3g1b6452rf50961evp3n20m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh506sBdgnBw4sqjjuYJsT7sgI76ce7oc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

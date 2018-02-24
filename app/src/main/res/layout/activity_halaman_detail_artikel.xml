@@ -21,6 +21,15 @@
             app:expandedTitleTextAppearance="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                app:indicatorColor="@color/putih"
+                app:indicatorName="BallPulseIndicator" />
+
             <ImageView
                 android:id="@+id/imgartikel"
                 android:layout_width="match_parent"
